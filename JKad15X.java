@@ -15,31 +15,31 @@ import java.util.Scanner;
 			//System.out.println("1回割れば○○全部"+(v*h)-1);	
 		}
 		public static int breakoff(int v, int h){
-			int va;//商
-			va=v; 
-			int ha;//商
-			ha=h;
-			int vw;//余り
+			int dh;//縦の値 divide heigth
+			dh=v; 
+			int dw;//縦の値 divide width
+			dw=h;
+			int vw;//縦の加算式を入れる
 			vw=0;
-			int hw;//余り
+			int hw;//横の加算式を入れる
 			hw=0;
-			while (va>1){
-				va=va-1;
-				vw++;
-				if (va==1){
-					vw=vw*ha;
+			while (dh>1){
+				dh=dh-1;
+				vw++;       //1個ずつ分けて加算する
+				if (dh==1){
+					vw=vw*dw;//縦で分けたらそれを横の分をかける
 					break;
 				}
 			}
-			while (ha>1){
-				ha=ha-1;
-				hw++;
-				if (ha==1){
+			while (dw>1){
+				dw=dw-1;
+				hw++;  //横の分を分けて加算する
+				if (dw==1){
 					break;
 				}
 			}
 			int sum;
-			sum=vw+hw;
+			sum=vw+hw;//縦で分ける分と横で分けた分をたす
 		return sum;
 		
 		}
@@ -47,11 +47,11 @@ import java.util.Scanner;
 		public static void main(String[] args){
 			Scanner in = new Scanner(System.in);
 			System.out.println("板チョコを割っていきます");
-			System.out.println("縦のブロックはいくつですか");
+			System.out.print("縦のブロックはいくつですか");
 			int length = in.nextInt(); 
-			System.out.println("横のブロックはいくつですか");
+			System.out.print("横のブロックはいくつですか");
 			int width = in.nextInt(); 
-			System.out.println("誰が試合を計算しますか(1:出木杉くん, それ以外:しずか)");
+			System.out.print("誰が試合を計算しますか(1:出木杉くん, それ以外:しずか)");
 			int num = in.nextInt(); 
 			if (num==1){
 				dekisugi(length,width);
