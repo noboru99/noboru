@@ -12,7 +12,7 @@ import java.util.Scanner;
 		}
 		public static void sizuka(int v, int h){
 			System.out.println("そんな簡単よ");
-			//System.out.println("1回割れば○○全部"+(v*h)-1);	
+			System.out.println("1回割れば○○全部"+v*h+"個にするには"+(v*h-1)+"回だ");	
 		}
 		public static int breakoff(int v, int h){
 			int dh;//縦の値 divide heigth
@@ -55,6 +55,9 @@ import java.util.Scanner;
 			int num = in.nextInt(); 
 			if (num==1){
 				dekisugi(length,width);
+			}
+			if (num==2){
+				sizuka(length,width);
 			}
 		}
 		
